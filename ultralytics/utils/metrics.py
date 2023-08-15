@@ -74,7 +74,6 @@ def box_iou(box1, box2, eps=1e-7):
     return inter / ((a2 - a1).prod(2) + (b2 - b1).prod(2) - inter + eps)
 
 
-##Add wise iou class
 class WIoU_Scale:
     ''' monotonous: {
             None: origin v1
@@ -108,6 +107,7 @@ class WIoU_Scale:
                 return beta / alpha
         return 1
     
+
 def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SIoU=False, EIoU=False, WIoU=False, Focal=False, alpha=1, gamma=0.5, scale=False, eps=1e-7):
     # Returns Intersection over Union (IoU) of box1(1,4) to box2(n,4)
 
